@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+    <meta charset="utf-8">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="{% static 'css/signup_page.css' %}">
+    </head>
+    <body>
+        
+<div class="container">
+   
+   <h2>INSCRIPTION</h2>
+<br/>
+    {% if form.errors %}
+        {{ form.errors }}
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <button type="submit" >S’inscrire</button>
+    </form>
+</div>
+
+</body>
+</html>

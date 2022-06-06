@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+    <meta charset="utf-8">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="{% static 'css/connexion_page.css' %}">
+    </head>
+    <body>
+        
+<div class="center">
+    <h1>Connexion</h1>
+
+<p>{{ message }}</p>
+<form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button type="submit" >Se connecter</button>
+</form>
+    <p>Nouvel utilisateur: <a href="{% url 'inscription' %}">Inscription</a></p>
+</div>
+
+</body>
+</html>

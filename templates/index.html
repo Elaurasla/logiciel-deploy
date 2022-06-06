@@ -1,0 +1,49 @@
+{% load static %}
+
+<html>
+<body>
+<h2>Enregistrement de courrrier </h2>
+<form method="POST" class="post-form" >
+{% csrf_token %}
+{{ form.as_p}}
+<button type="submit" class="save btn">Enregistrer</button>
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+</form>
+<table width="600" border="1" style=" border-collapse:collapse">
+
+    <thead>
+        <tr>
+            <th>Numéro</th>
+            <th>Date</th>
+            <th>Date_emission</th>
+            <th>Reference</th>
+            <th>Origine</th>
+            <th>Objet</th>
+            <th>Bureau</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for element in dataCourriers %}
+            <tr>
+                
+                <form action="/delete" method="post">
+
+                <td>{{ element.num }}</td>
+                <td>{{ element.date }}</td>
+                <td>{{ element.date_emission }}</td>
+                <td>{{ element.reference }}</td>
+                <td>{{ element.origine  }}</td>
+                <td>{{ element.objet }}</td>
+                <td>{{ element.bureau }}</td>
+
+                <td><input type="reset" value="Reset"></td></form>
+            </tr>
+            {% endfor %}
+    </tbody>
+
+</table>
+
+
+</body>
+</html>

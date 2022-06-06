@@ -1,0 +1,13 @@
+{% load static %}
+
+{% block content %}
+<p> Êtes vous sûr de vouloir supprimer ce courrier? </p>
+<form  method="POST" action="{% url 'delete' id=courrier.id %}">
+{% csrf_token %}
+<a href="{% url 'vue' %}">Retour</a>
+
+<input type="submit" name="Confirm" value="Supprimer">
+
+</form>
+
+{% endblock %}

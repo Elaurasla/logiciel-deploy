@@ -1,0 +1,49 @@
+/* Couleurs pages et texte */
+body
+{
+    background-color: rgb(179, 103, 73); 
+}
+
+h1 a, h2 a {
+    color: rgb(255, 217, 0);
+}
+
+
+
+h1 {
+  font-style: normal; 
+  font-weight: 700; 
+  font-family: 'Didot', serif;
+  text-align: center;
+  padding: 10px 50px 10px 0px; 
+  background-color: rgb(233, 217, 198);
+  
+
+}
+
+
+/* Barre de recherche
+
+#searchbar{margin-left: auto; margin-right: auto;position:relative; width:1040px; height:auto;}
+.formulaire               {display:inline-block;}
+.formulaire .champ       {width:600px; height:35px;}
+.formulaire .bouton       { background-color: azure;background-repeat: no-repeat;width: 35px;height: 35px;padding: 0; }
+*/
+
+#searchbar{
+    margin-left: 15%;
+    padding:15px;
+    border-radius: 10px;
+  }
+
+  input[type=text] {
+     width: 30%;
+     -webkit-transition: width 0.15s ease-in-out;
+     transition: width 0.15s ease-in-out;
+  }
+
+  /* When the input field gets focus,
+       change its width to 100% */
+  input[type=text]:focus {
+    width: 70%;
+  }

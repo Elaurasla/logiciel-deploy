@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load static %}
+   <link rel="stylesheet" href="{% static 'css/update.css' %}">
+</head>
+<body>
+<form method="POST" class="post-form" action="/view/">
+    <input type="hidden" name="id" id="id" required maxlenght="20" value="update"/>
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Modifications</h3>
+    </div>
+  </div> 
+  <div class="form-group row">
+  <div class="col-sm-4">
+      {{ form.num }}
+
+   <div class="form-group row">
+   <div class="col-sm-4">
+    {{ form.date }}
+
+    <div class="form-group row">
+    <div class="col-sm-4">
+
+    {{ form.date_emission }}
+
+    <div class="form-group row">
+    <div class="col-sm-4">
+    {{ form.reference }}
+
+    <div class="form-group row">
+        <div class="col-sm-4">
+         {{ form.origine }}
+
+    <div class="form-group row">
+    <div class="col-sm-4">
+         {{ form.objet }}
+
+    <div class="form-group row">
+     <div class="col-sm-4">
+        {{ form.bureau }}
+
+  </div>
+  </div>
+  
+  <div class="form-group row">
+  <label class="col-sm-1 col-form-label"></label>
+  <div class="col-sm-4">
+      <button type="submit" class="btn btn-primary">Enregistrer</button>
+  </div>
+  </div>
+  </div>
+    </form>  
+</body>
+
+</html>

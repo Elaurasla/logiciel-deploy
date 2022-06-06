@@ -1,0 +1,46 @@
+{% load static %}
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Courriers arrives</title>
+        <link rel="stylesheet" href="{% static 'css/page_courrierArrives.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <ul style="list-style: none">
+                    <li><a href="/">Accueil</a> </li>
+                    <li><a href="/courrierD/">Courrier Départ</a></li>
+                </ul>
+            </nav>
+        <!--<div id="searchbar">--> 
+        <div class="site-container"> 
+            <h1>COURRIER ARRIVE</h1>
+ 
+        <div class="row">         
+        <br>
+
+        {% if user.is_authenticated %}
+        <a href="{% url 'vue_courrier' %}">Enregistrer un courrier</a>
+        {% endif %}
+
+        <br>
+
+        {% if user.is_authenticated %}
+        <a href="{% url 'crr' %}">Enregistrer un courrier test 2</a>
+        {% endif %}
+ 
+        <br> 
+
+        {% if user.is_authenticated %}
+        <a href="{% url 'vue' %}">voir tous les courriers<span>&#x27f6</span></a>
+        {% endif %}
+
+     
+    </div>
+</div>
+
+</div>
+    </body>
+</html>

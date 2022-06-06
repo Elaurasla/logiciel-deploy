@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="{% static 'css/departenregistrement_courrier.css' %}">
+    
+    <!--<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>-->
+</head>
+<body> 
+    
+  
+<header>
+    <nav>
+    <ul>
+
+        <li >
+            <a href="/">Accueil</a>
+        </li>
+        <li >
+        <a href="/viewd/">Voir courriers départs enregistrés</a>
+        </li>
+        <li>
+        <a href="/crr/">Enregistrer un courrier arrivé</a>
+    </li>
+
+    </ul>
+</nav>
+</header>
+
+
+<form method="POST" class="post-form" action="/crrd/" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label> 
+    <div class="col-sm-4">
+    <h3>Enregistrement courrier Depart</h3> 
+    </div>
+  </div>
+  <hr>
+  <div class="form-group row">
+
+  <div class="col-sm-4">
+      {{ form.num }}
+
+   <div class="form-group row">
+
+   <div class="col-sm-4">
+    {{ form.date }}
+
+    <div class="form-group row">
+    <div class="col-sm-4">
+    {{ form.date_emission }}
+
+    <div class="form-group row">
+    <div class="col-sm-4">
+    {{ form.reference }} 
+
+    <div class="form-group row">
+        <div class="col-sm-4">
+         {{ form.origine }}
+
+    <div class="form-group row">
+    <div class="col-sm-4">
+         {{ form.objet }}
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Bureau:</label>
+
+     <div class="col-sm-4">
+
+        <select name="bureau" class="custom-select mb-4" name="course">
+
+    <option value=FINANCES {% if form.bureau.value == 'FINANCE' %}selected{% endif%}>FINANCES</option>
+    <option value=CONTENTIEUX {% if form.bureau.value == 'CONTENTIEUX' %}selected{% endif%}>CONTENTIEUX</option>
+    <option value=RECRUTEMENT {% if form.bureau.value == 'RECRUTEMENT' %}selected{% endif%}>RECRUTEMENT</option>
+    <option value=PESE {% if form.bureau.value == 'PESE' %}selected{% endif%}>PESE</option>
+    <option value=LOGISTIQUE {% if form.bureau.value == 'LOGISTIQUE' %}selected{% endif%}>LOGISTIQUE</option>
+    <option value=MAGASIN {% if form.bureau.value == 'MAGASIN' %}selected{% endif%}>MAGASIN</option>
+    <option value=TRAITEMENT {% if form.bureau.value == 'TRAITEMENT' %}selected{% endif%}>TRAITEMENT</option>
+    <option value=BRH {% if form.bureau.value == 'BRH' %}selected{% endif%}>BRH</option>
+    <option value=IMMOBILIERE {% if form.bureau.value == 'IMMOBILIERE' %}selected{% endif%}>IMMOBILIERE</option>
+
+
+    </select>
+  </div>
+  </div> 
+
+  <br>
+
+
+<!--<div class="mb-3">
+      <label for="" class="form-label">Image</label>
+      <input type="file" Required name="image" class="form-control">
+
+  </div>-->
+
+  <div class="form-group row">
+  <label class="col-sm-1 col-form-label"></label>
+  <div class="col-sm-4">
+      <button type="submit" class="btn btn-primary">Enregistrer</button>
+  </div>
+  </div>
+  </div>
+    </form>  
+
+
+</body>
+
+</html>

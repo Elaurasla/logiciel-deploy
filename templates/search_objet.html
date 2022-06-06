@@ -1,0 +1,46 @@
+
+{% for Courrier in all_search_results %}
+
+<head> 
+    <meta charset="UTF-8">
+    <title>Resultats</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+</head>
+
+<body>
+ 
+
+    <table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr> 
+        <th>Numéro</th>
+        <th>Date</th>
+        <th>Date d'émission</th>
+        <th>Reference</th>
+        <th>Origine</th>
+        <th>Objet</th>
+        <th>Bureau</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ Courrier.num }}</td>
+        <td>{{ Courrier.date }}</td>
+        <td>{{ Courrier.date_emission }}</td>
+        <td>{{ Courrier.reference }}</td>
+        <td>{{ Courrier.origine }}</td>
+        <td>{{ Courrier.objet }}</td>
+        <td>{{ Courrier.bureau }}</td>
+        <td>
+            <a class = 'btn btn-success' href="{% url 'modifier' Courrier.id %}">Modifier</a>
+            <a href="/delete/{{Courrier.id }}" class="btn btn-danger">Supprimer</a>
+        </td>
+        </tr>
+    </tbody>
+    
+    </table>
+
+{% empty %}
+    <h2>No results found</h2>
+{% endfor %}

@@ -1,0 +1,95 @@
+body
+{
+    background-color: rgb(167, 103, 44); 
+}
+
+nav ul{
+     display: flex;
+     justify-content: flex-end;
+     flex: 1;
+     padding-right: 40px;
+     text-align: right;
+     list-style-type: none;
+   }
+
+ul li{
+  margin-right: 10px;
+}
+
+ul li a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.site-container .row{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+
+} 
+
+.row a{
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  background-color: rgb(230, 187, 132);
+  color: white;
+  border: 1px solid white;
+  width: auto;
+  margin-right: 600px; 
+  margin-left: 550px; 
+  font-size: 20px;
+  transition: 0.3s;
+
+}
+
+.row a:hover{
+  background-color: white;
+  color: #000;
+}
+
+.site-container h1{
+  font-size: 80px;
+  line-height: 120px;
+  margin-left: -10px;
+  
+
+}
+
+.site-container .row{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+
+}
+
+.row a{
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  text-decoration: none;
+  color:white;
+  border: 1px solid white;
+  margin-right: 40px;
+  font-size: 18px;
+  position:relative;
+
+}
+
+.row a span{
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 2;
+
+}
+
+.row span {
+  font-size: 18px;
+
+}
+
