@@ -16,10 +16,11 @@ class CourrierForm(forms.ModelForm):
     origine = forms.CharField(widget=forms.TextInput(attrs={ 'placeholder': 'Origine'}))
     reference = forms.CharField(widget=forms.TextInput(attrs={'class': 'input', 'placeholder': 'Référence'}))
     objet = forms.CharField(widget=forms.TextInput(attrs={'class': 'input','placeholder': 'Objet'}))
+    obs = forms.CharField(widget=forms.TextInput(attrs={'class': 'input','placeholder': 'Observations'}))
 
     class Meta:
         model = Courrier
-        fields = ['num', 'date', 'date_emission', 'reference', 'origine', 'objet','bureau']
+        fields = ['num', 'date', 'date_emission', 'reference', 'origine', 'objet','bureau','obs']
 
  
 class CourrierDepartForm(ModelForm):
@@ -29,6 +30,8 @@ class CourrierDepartForm(ModelForm):
     origine = forms.CharField(widget=forms.TextInput(attrs={ 'placeholder': 'Origine'}))
     reference = forms.CharField(widget=forms.TextInput(attrs={'class': 'input', 'placeholder': 'Référence'}))
     objet = forms.CharField(widget=forms.TextInput(attrs={'class': 'input','placeholder': 'Objet'}))
+    obs = forms.CharField(widget=forms.TextInput(attrs={'class': 'input','placeholder': 'Observations'}))
+
     class Meta:
         model = CourrierDepart
-        fields = ['num', 'date', 'date_emission', 'reference', 'origine', 'objet','bureau']
+        fields = ['num', 'date', 'date_emission', 'reference', 'origine', 'objet','bureau','obs']

@@ -34,7 +34,7 @@
         <th>Origine</th>
         <th>Objet</th>
         <th>Bureau</th>
-        <th>Scan</th>
+        <th>Observations</th>
 
     </tr>
     </thead>
@@ -48,6 +48,8 @@
         <td>{{ CourrierDepart.origine }}</td>
         <td>{{ CourrierDepart.objet }}</td>
         <td>{{ CourrierDepart.bureau }}</td>
+        <td>{{ CourrierDepart.obs }}</td>
+
         <td>
             <a class = 'btn btn-success' href="{% url 'modifierd' CourrierDepart.id %}">Modifier</a>
             {% if perms.CourriersApp.view %}

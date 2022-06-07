@@ -53,22 +53,42 @@ def view(request):
 @login_required
 @group_required('admin')
 def delete(request, id):
-    courrier= Courrier.objects.get(id=id)
+    courriers= Courrier.objects.get(id=id)
     if request.method == "POST":
-        courrier.delete()
+        courriers.delete()
         return redirect('vue')
     context = {'courrier':courrier}
     return render(request, 'delete.html', context)
 
+ 
 
-@login_required
 def update(request,id):
     courriers= Courrier.objects.get(id=id)
-    form = CourrierForm(request.POST or None, instance=courriers)
+    form = CourrierForm(request.POST or None, instance= courriers)
     if form.is_valid():
         form.save()
         return redirect('vue')
-    return render(request, 'update.html', {'form':form, 'courriers':courriers})
+    return render(request, 'update.html', {'form': form, 'courriers':courriers})
+
+# def update(request,id):
+#     courriers= Courrier.objects.get(id=id)
+#     form= CourrierForm(instance = courriers)
+#     if request.method == "POST":
+#         form = CourrierForm(request_POST, instance= courriers)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('vue')
+#     context = {'form': form}
+#     return render(request, 'update.html', context)
+
+# @login_required
+# def update(request,id):
+#     courriers= Courrier.objects.get(id=id)
+#     form = CourrierForm(request.POST or None, instance=courriers)
+#     if form.is_valid():
+#         form.save()
+#         return redirect('vue')
+#     return render(request, 'update.html', {'form':form, 'courriers':courriers})
 
 # @login_required
 # def update(request,id):
@@ -184,13 +204,12 @@ def delete_depart(request, id):
 
 @login_required
 def update_depart(request,id):
-    courrierdepart= CourrierDepart.objects.get(id=id)
-    form = CourrierDepartForm(request.POST or None, instance = courrierdepart)
+    courriers= CourrierDepart.objects.get(id=id)
+    form = CourrierDepartForm(request.POST or None, instance= courriers)
     if form.is_valid():
         form.save()
-        return redirect('/viewd')
-    context = {'form': form}
-    return render(request, 'update.html', context)
+        return redirect('vued')
+    return render(request, 'update_depart.html', {'form': form, 'courriers':courriers})
 
 
 def image(request, id):

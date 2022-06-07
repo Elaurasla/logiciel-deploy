@@ -5,7 +5,6 @@
     <title>Index</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
-    <link rel="stylesheet" href="{% static 'css/view.css' %}"/>
 </head>
 
 <body>
@@ -38,6 +37,7 @@
         <th>Origine</th>
         <th>Objet</th>
         <th>Bureau</th>
+        <th>Observations</th>
     </tr>
     </thead>
     <tbody>
@@ -50,6 +50,8 @@
         <td>{{ Courrier.origine }}</td>
         <td>{{ Courrier.objet }}</td>
         <td>{{ Courrier.bureau }}</td>
+        <td>{{ Courrier.obs }}</td>
+
         <td>
             <a class = 'btn btn-success' href="{% url 'modifier' Courrier.id %}">Modifier</a>
         

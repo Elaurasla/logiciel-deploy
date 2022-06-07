@@ -15,8 +15,11 @@ class Courrier(models.Model):
     origine = models.CharField(max_length=100)
     objet = models.TextField(blank = True)
     bureau = models.TextField(max_length=100)
-    class Meta:
-        db_table = "courriers"
+    obs = models.CharField(max_length=100)
+
+    
+class Meta:
+    db_table = "courriers"
 
 class CourrierDepart(models.Model):
     num = models.PositiveIntegerField()
@@ -26,8 +29,11 @@ class CourrierDepart(models.Model):
     origine = models.CharField(max_length=100)
     objet = models.TextField(blank = True)
     bureau = models.TextField(max_length=100)
-    class Meta:
-        db_table = "courriersdepart"
+    obs = models.CharField(max_length=100)
+
+
+class Meta:
+    db_table = "courriersdepart"
 
 class CourrierFilter(django_filters.FilterSet):
     class Meta:
