@@ -33,7 +33,9 @@
         <td>{{ CourrierDepart.bureau }}</td>
         <td>
             <a class = 'btn btn-success' href="{% url 'modifierd' CourrierDepart.id %}">Modifier</a>
-            <a href="/deleted/{{CourrierDepart.id }}" class="btn btn-danger">Supprimer</a>
+            {% if perms.CourriersApp.view %}
+            <a href="/delete/{{CourrierDepart.id }}" class="btn btn-danger">Supprimer</a>
+            {% endif %}
         </td>
         </tr>
     </tbody>

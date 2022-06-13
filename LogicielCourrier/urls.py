@@ -67,7 +67,7 @@ urlpatterns = [
     path('results_objet/', SearchView_objet.as_view(), name='search_objet'),
  
     path('resultsd/', SearchViewd.as_view(), name='searchd'),
-    path('results_objetd/', SearchView_objet.as_view(), name='search_objetd'),
+    path('results_objetd/', SearchView_objetd.as_view(), name='search_objetd'),
 
     # path('courrier_pdf', courrier_pdf, name="courrier_pdf" )
     # path('image/<int:id>', image, name='image')

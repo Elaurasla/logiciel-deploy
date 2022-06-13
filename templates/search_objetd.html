@@ -1,5 +1,5 @@
 
-{% for Courrier in all_search_results %}
+{% for CourrierDepart in all_search_results %}
 
 <head> 
     <meta charset="UTF-8">
@@ -25,18 +25,18 @@
     </thead>
     <tbody>
     <tr>
-        <td>{{ Courrier.num }}</td>
-        <td>{{ Courrier.date }}</td>
-        <td>{{ Courrier.date_emission }}</td>
-        <td>{{ Courrier.reference }}</td>
-        <td>{{ Courrier.origine }}</td>
-        <td>{{ Courrier.objet }}</td>
-        <td>{{ Courrier.bureau }}</td>
+        <td>{{ CourrierDepart.num }}</td>
+        <td>{{ CourrierDepart.date }}</td>
+        <td>{{ CourrierDepart.date_emission }}</td>
+        <td>{{ CourrierDepart.reference }}</td>
+        <td>{{ CourrierDepart.origine }}</td>
+        <td>{{ CourrierDepart.objet }}</td>
+        <td>{{ CourrierDepart.bureau }}</td>
         <td>
-            <a class = 'btn btn-success' href="{% url 'modifier' Courrier.id %}">Modifier</a>
-            {% if perms.CourriersApp.view %} 
+            <a class = 'btn btn-success' href="{% url 'modifier' CourrierDepart.id %}">Modifier</a>
+            {% if perms.CourriersApp.view %}
             <a href="/delete/{{CourrierDepart.id }}" class="btn btn-danger">Supprimer</a>
-            {% endif %} 
+            {% endif %}
         </td>
         </tr>
     </tbody>

@@ -88,12 +88,11 @@ class SearchViewd(ListView):
         else:
             result = None
         return result
-
   
 
 class SearchView_objetd(ListView):
     model = CourrierDepart
-    template_name = 'search_objet.html'
+    template_name = 'search_objetd.html'
     context_object_name = 'all_search_results'
 
     def get_queryset(self):
@@ -105,6 +104,8 @@ class SearchView_objetd(ListView):
         else:
             result = None 
         return result
+
+
 
 
 """

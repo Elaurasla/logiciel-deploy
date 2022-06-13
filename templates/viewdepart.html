@@ -23,19 +23,19 @@
 <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'searchd' %}" >
     {% csrf_token %}
    <input class="form-control mr-sm-2" type="search" name="searchd" placeholder="Origine">
-   <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"> Search </button>
+   <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"> Rechercher </button>
 </form> 
 
 <br>
 
 <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search_objetd' %}" >
     {% csrf_token %}
-   <input class="form-control mr-sm-2" type="search" name="search_objet" placeholder="Objet">
+   <input class="form-control mr-sm-2" type="search" name="search_objetd" placeholder="Objet">
    <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"> Rechercher </button>
 </form>
 
-<br>
 
+<br>
     <table class="table table-striped table-bordered table-sm">
         <top>Courrier départ</top>
     

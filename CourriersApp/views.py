@@ -89,15 +89,16 @@ def crr_depart(request):
     if request.method == "POST":
         form = CourrierDepartForm(request.POST, request.FILES)
         if form.is_valid():
+            bureau = form.cleaned_data.get('bureau')
             try:
                 form.save()
-                message.success(request,'Courrier enregistré')
-                return redirect ('/crrd')
+                return redirect ('crrd')
             except:  
                 pass
     else: 
         form = CourrierDepartForm()
     return render(request, 'courrierD_enregistrement.html', {'form': form})
+
 
 @login_required
 def view_depart(request):
