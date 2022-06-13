@@ -50,7 +50,7 @@ class SearchView(ListView):
         result = super(SearchView, self).get_queryset()
         query = self.request.GET.get('search')
         if query:
-            postresult = Courrier.objects.filter(origine__iexact=query)
+            postresult = Courrier.objects.filter(origine__icontains=query)
             result = postresult
         else:
             result = None
@@ -67,7 +67,7 @@ class SearchView_objet(ListView):
         result = super(SearchView_objet, self).get_queryset()
         query = self.request.GET.get('search_objet')
         if query:
-            postresult = Courrier.objects.filter(objet__iexact=query) 
+            postresult = Courrier.objects.filter(objet__icontains=query) 
             result = postresult
         else:
             result = None 
@@ -83,7 +83,7 @@ class SearchViewd(ListView):
         result = super(SearchViewd, self).get_queryset()
         query = self.request.GET.get('searchd')
         if query:
-            postresult = CourrierDepart.objects.filter(origine__iexact=query)
+            postresult = CourrierDepart.objects.filter(origine__icontains=query)
             result = postresult
         else:
             result = None
@@ -100,7 +100,7 @@ class SearchView_objetd(ListView):
         result = super(SearchView_objetd, self).get_queryset()
         query = self.request.GET.get('search_objetd')
         if query:
-            postresult = CourrierDepart.objects.filter(objet__iexact=query) 
+            postresult = CourrierDepart.objects.filter(objet__icontains=query) 
             result = postresult
         else:
             result = None 
@@ -117,11 +117,11 @@ class SearchView(ListView):
         result = super(SearchView, self).get_queryset()
         query = self.request.GET.get('search')
         if query:
-            postresult = Courrier.objects.filter(objet__iexact=query)
+            postresult = Courrier.objects.filter(objet__icontains=query)
             result= postresult
         else:
             result = None
         return result"""
 
 
-#postresult = Courrier.objects.filter(Q(objet__iexact=query) & Q(origine__iexact=query))
+#postresult = Courrier.objects.filter(Q(objet__icontains=query) & Q(origine__icontains=query))

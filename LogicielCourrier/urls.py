@@ -15,6 +15,8 @@ from CourriersApp.views import crr
 from CourriersApp.views import view 
 from CourriersApp.views import delete  
 from CourriersApp.views import update   
+# from CourriersApp.views import courrier_pdf
+
 #from CourriersApp.views import edit   
 
 
@@ -23,7 +25,6 @@ from CourriersApp.views import view_depart
 from CourriersApp.views import delete_depart 
 from CourriersApp.views import update_depart
 # from CourriersApp.views import image
-
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -68,8 +69,8 @@ urlpatterns = [
     path('resultsd/', SearchViewd.as_view(), name='searchd'),
     path('results_objetd/', SearchView_objet.as_view(), name='search_objetd'),
 
+    # path('courrier_pdf', courrier_pdf, name="courrier_pdf" )
     # path('image/<int:id>', image, name='image')
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-  

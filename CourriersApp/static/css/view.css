@@ -1,0 +1,51 @@
+
+.container {
+    text-decoration: none;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    background: #f0a500;
+    line-height: 1.15;
+    font-size: 16px;
+
+                }
+
+.container li{
+    text-decoration: none;
+}
+
+.container li a{
+    text-decoration: none;
+    -moz-user-select: none;
+    padding-bottom: 20px;
+
+}
+
+a{
+    color:#fff;
+
+}
+
+form{
+    padding-left: 20px;
+
+}
+
+input{
+    background:rgb(221, 221, 221)
+
+}
+
+a:focus {
+    outline: 0;
+    border-color: #ffffff;
+  }
+
+thead{
+    color:rgb(255, 255, 255);
+    background:black
+}

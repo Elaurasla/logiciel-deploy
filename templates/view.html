@@ -5,27 +5,34 @@
     <title>Index</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/view.css' %}"/>
 </head>
 
 <body>
  
     <li style="display: inline-block; padding: 10px 20px;">
+        <div class="container">
         <a href="/crr/">Enregistrer un Courrier</a>
         </li>
+    </div>
 
 
 <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search' %}" >
     {% csrf_token %}
-   <input class="form-control mr-sm-2" type="search" name="search">
+   <input class="form-control mr-sm-2" type="search" name="search" placeholder="Origine">
    <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"> Search </button>
 </form>
 
-<!--
-<form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search_objet' %}" >
-    <input class="form-control mr-sm-2" type="search" name="search_objet">
-    <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"> Search objet </button>
- </form>-->
+<br>
 
+<form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search_objet' %}" >
+    {% csrf_token %}
+   <input class="form-control mr-sm-2" type="search" name="search_objet" placeholder="Objet">
+   <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"> Rechercher </button>
+</form>
+
+
+<br>
     <table class="table table-striped table-bordered table-sm">
         <top>Courrier arrivé</top>
     <thead cl ass="thead-dark">
